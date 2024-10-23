@@ -28,6 +28,20 @@ Having come across some books by one of Ted's former students (Tim Lerch), I too
 
 Feel free to use the currently deployed instance of my tool for your needs, link is above.  While I haven't extensively tested all browsers, preliminary testing seems consistent.  As expected, your browser may need to be granted permissions on first use if you try to download your created diagrams, or use the copy paste functionality.
 
+## Hotkeys
+
+For those with a full keyboard, I have added convenience shortcuts to the numpad section as follows:
+
+| Shortcut | Function                                                                     |
+| -------- | ---------------------------------------------------------------------------- |
+| Numpad0  | Hides the editor if you'd like to view your arrangement without distraction. |
+| Numpad1  | Selects: `Solid Circle`                                                      |
+| Numpad2  | Selects: `X`                                                                 |
+| Numpad3  | Selects: `Triangle`                                                          |
+| Numpad4  | Selects: `Square`                                                            |
+| Numpad5  | Selects: `Pentagon`                                                          |
+| Numpad6  | Selects: `Eraser`                                                            |
+
 ## Credits
 Copyright © 2024 <a href="https://github.com/christopherball" target="_blank">Christopher Ball</a><br />
 License: <a href="https://github.com/christopherball/guitarDiagramToolkit/blob/main/LICENSE">MIT License</a>, Source: <a href="https://github.com/christopherball/guitarDiagramToolkit">Github</a><br />
