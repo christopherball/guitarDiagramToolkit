@@ -3,7 +3,7 @@ Handcrafted for personal needs, provides a unique guitar diagram authoring exper
 
 ## Arrangement Symbols
 
-It's my understanding that Ted Greene was the original creator (or at least heavily popularized) his unique <a href="https://www.tedgreene.com/images/lessons/students/paulvachon/howtoreadtedgreenechorddiagrams.pdf" target="_blank">system of notation</a>.  In short, his guitar diagrams convey both a landing chord, and subsequent melody notes, before moving onto the next diagram.  Tim's original idea for how he sequenced the landing chord and following melody notes was as follows:
+It's my understanding that Ted Greene was the original creator (or at least heavily popularized) his unique <a href="https://www.tedgreene.com/images/lessons/students/paulvachon/howtoreadtedgreenechorddiagrams.pdf" target="_blank">system of notation</a>.  In short, his guitar diagrams convey both a landing chord, and subsequent melody notes, before moving onto the next diagram.  Ted's original idea for how he sequenced the landing chord and following melody notes was as follows:
 
 | Shape          | Function       |
 | -------------- | -------------- |
