@@ -1,0 +1,163 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: grey;
+    color: white;
+}
+
+html {
+    height: 100%;
+}
+
+.containerSection {
+    width: 227px;
+    margin-bottom: 3px;
+}
+
+.shapeSelector {
+    background-color: white;
+    border: 1px black solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3px;
+    height: 29px;
+}
+
+.shapeSelector input {
+    margin: 5px;
+    cursor: pointer;
+    height: 20px;
+    filter: opacity(0.3);
+}
+
+.shapeSelector input.selected {
+    filter: opacity(1);
+}
+
+input#chord {
+    width: calc(100% - 6px);
+}
+
+input::placeholder {
+    opacity: 0.4;
+}
+
+input[type]:not([type="image"]) {
+    border: 1px black solid;
+}
+
+input#s6,
+input#s5,
+input#s4,
+input#s3,
+input#s2,
+input#s1 {
+    width: 28px;
+}
+
+select#fret {
+    width: 100%;
+}
+
+select#size {
+    width: 72px;
+}
+
+select#fret:invalid {
+    color: rgb(195, 195, 195);
+}
+
+option {
+    color: black;
+}
+
+select {
+    border: 1px black solid;
+    cursor: pointer;
+}
+
+svg {
+    border: 1px solid black;
+}
+
+.toolContainer {
+    margin: auto;
+    width: 227px;
+}
+
+button.primaryButton {
+    background-color: #6eb1ff;
+    cursor: pointer;
+}
+
+.actionContainer {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+button#insertBtn,
+button#updateBtn,
+button#deleteBtn,
+button#shiftLeftBtn,
+button#shiftRightBtn {
+    background-color: rgb(203, 203, 203);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+button#deleteBtn {
+    font-size: 10px;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+.previewTable {
+    display: block;
+    line-height: 0px;
+    table-layout: auto;
+}
+
+#previewChain {
+    padding-top: 2px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#previewRow td {
+    display: inline-block;
+}
+
+#previewRow td svg {
+    cursor: pointer;
+}
+
+svg#diagramTemplate {
+    display: none;
+}
+
+.header {
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.subheader {
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #98c8ff;
+}

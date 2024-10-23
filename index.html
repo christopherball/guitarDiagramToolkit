@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Guitar Diagram Toolkit</title>
+        <link rel="stylesheet" href="includes/css/index.css" />
+    </head>
+    <body>
+        <div class="toolContainer" id="toolContainer">
+            <div class="header">Guitar Diagram Toolkit</div>
+            <div class="subheader">
+                Copyright © 2024
+                <a href="https://github.com/christopherball">Christopher Ball</a
+                >, <a href="">Github</a>
+            </div>
+            <div class="shapeSelector">
+                <input
+                    type="image"
+                    src="images/circle.png"
+                    onclick="selectShape('circle')"
+                    class="selected"
+                    title="Circle (numpad1)"
+                    shapeType="circle" />
+                <input
+                    type="image"
+                    src="images/x.png"
+                    onclick="selectShape('x')"
+                    title="X (numpad2)"
+                    shapeType="x" />
+                <input
+                    type="image"
+                    src="images/triangle.png"
+                    onclick="selectShape('triangle')"
+                    title="Triangle (numpad3)"
+                    shapeType="triangle" />
+                <input
+                    type="image"
+                    src="images/square.png"
+                    onclick="selectShape('square')"
+                    title="Square (numpad4)"
+                    shapeType="square" />
+                <input
+                    type="image"
+                    src="images/pentagon.png"
+                    onclick="selectShape('pentagon')"
+                    title="Pentagon (numpad5)"
+                    shapeType="pentagon" />
+                <input
+                    type="image"
+                    src="images/erase.png"
+                    onclick="selectShape('erase')"
+                    title="Erase (numpad6)"
+                    shapeType="erase" />
+            </div>
+            <div class="containerSection">
+                <input
+                    type="text"
+                    id="chord"
+                    placeholder="Chord Name (optional)" />
+            </div>
+            <div class="containerSection">
+                <select name="fret" id="fret" required>
+                    <option value="" disabled selected hidden>
+                        Starting Fret (optional)
+                    </option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                </select>
+            </div>
+            <svg
+                id="diagram"
+                width="225"
+                height="350"
+                viewBox="0 0 225 350"
+                xmlns="http://www.w3.org/2000/svg"
+                diagrammer="1"></svg>
+            <svg
+                id="diagramTemplate"
+                width="225"
+                height="350"
+                viewBox="0 0 225 350"
+                xmlns="http://www.w3.org/2000/svg"
+                diagrammer="1"></svg>
+            <div class="containerSection stringLabels">
+                <input
+                    type="text"
+                    id="s6"
+                    placeholder="s6"
+                    class="stringLabels" />
+                <input
+                    type="text"
+                    id="s5"
+                    placeholder="s5"
+                    class="stringLabels" />
+                <input
+                    type="text"
+                    id="s4"
+                    placeholder="s4"
+                    class="stringLabels" />
+                <input
+                    type="text"
+                    id="s3"
+                    placeholder="s3"
+                    class="stringLabels" />
+                <input
+                    type="text"
+                    id="s2"
+                    placeholder="s2"
+                    class="stringLabels" />
+                <input
+                    type="text"
+                    id="s1"
+                    placeholder="s1"
+                    class="stringLabels" />
+            </div>
+            <div>
+                <select name="size" id="size" title="Size">
+                    <option value="5.0">500%</option>
+                    <option value="4.0">400%</option>
+                    <option value="3.0">300%</option>
+                    <option value="2.0">200%</option>
+                    <option value="1.0">100%</option>
+                    <option value="0.9">90%</option>
+                    <option value="0.8">80%</option>
+                    <option value="0.7" selected>70%</option>
+                    <option value="0.6">60%</option>
+                    <option value="0.5">50%</option>
+                    <option value="0.4">40%</option>
+                    <option value="0.3">30%</option>
+                    <option value="0.2">20%</option>
+                    <option value="0.1">10%</option>
+                </select>
+                <button
+                    id="copyBtn"
+                    class="primaryButton"
+                    title="Copy the diagram SVG code above to your clipboard.">
+                    Copy
+                </button>
+                <button
+                    id="pasteBtn"
+                    class="primaryButton"
+                    title="Paste diagram SVG code (apply above) that is currently copied to your clipboard.">
+                    Paste
+                </button>
+                <button
+                    id="downloadBtn"
+                    class="primaryButton"
+                    title="Download zip file of all diagrams inserted below in SVG format."
+                    disabled>
+                    Zip ⤓
+                </button>
+                <div class="actionContainer">
+                    <button id="insertBtn" title="Insert">+</button>
+                    <button id="updateBtn" title="Update" disabled>✎</button>
+                    <button id="deleteBtn" title="Delete" disabled>🗑</button>
+                    <button id="shiftLeftBtn" title="Shift Left" disabled>
+                        ⇠
+                    </button>
+                    <button id="shiftRightBtn" title="Shift Right" disabled>
+                        ⇢
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="previewChain">
+            <table class="previewTable" cellpadding="0" cellspacing="0">
+                <tr id="previewRow"></tr>
+            </table>
+        </div>
+        <script src="includes/js/index.js"></script>
+        <script src="includes/js/lib/FileSaver.min.js"></script>
+        <script src="includes/js/lib/jszip.min.js"></script>
+    </body>
+</html>
