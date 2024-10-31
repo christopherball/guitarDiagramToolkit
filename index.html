@@ -58,15 +58,40 @@
                     shapeType="erase" />
             </div>
             <div class="containerSection">
-                <input
-                    type="text"
-                    id="chord"
-                    placeholder="Chord Name (optional)" />
+                <input type="text" id="chord" placeholder="Chord Name" />
             </div>
             <div class="containerSection">
-                <select name="fret" id="fret" required>
+                <select id="inputConnector" required>
+                    <option value="" disabled selected hidden>Connector</option>
+                    <option value="96-96">A-A</option>
+                    <option value="96-135">A-B</option>
+                    <option value="96-174">A-C</option>
+                    <option value="96-213">A-D</option>
+                    <option value="96-255">A-E</option>
+                    <option value="135-96">B-A</option>
+                    <option value="135-135">B-B</option>
+                    <option value="135-174">B-C</option>
+                    <option value="135-213">B-D</option>
+                    <option value="135-255">B-E</option>
+                    <option value="174-96">C-A</option>
+                    <option value="174-135">C-B</option>
+                    <option value="174-174">C-C</option>
+                    <option value="174-213">C-D</option>
+                    <option value="174-255">C-E</option>
+                    <option value="213-96">D-A</option>
+                    <option value="213-135">D-B</option>
+                    <option value="213-174">D-C</option>
+                    <option value="213-213">D-D</option>
+                    <option value="213-255">D-E</option>
+                    <option value="255-96">E-A</option>
+                    <option value="255-135">E-B</option>
+                    <option value="255-174">E-C</option>
+                    <option value="255-213">E-D</option>
+                    <option value="255-255">E-E</option>
+                </select>
+                <select id="fret" required>
                     <option value="" disabled selected hidden>
-                        Starting Fret (optional)
+                        Start Fret
                     </option>
                     <option value="1">1</option>
                     <option value="2">2</option>

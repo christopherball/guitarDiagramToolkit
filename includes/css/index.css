@@ -58,15 +58,17 @@ input#s1 {
     width: 28px;
 }
 
-select#fret {
-    width: 100%;
+select#fret,
+select#inputConnector {
+    width: 111px;
 }
 
 select#size {
     width: 72px;
 }
 
-select#fret:invalid {
+select#fret:invalid,
+select#inputConnector:invalid {
     color: rgb(195, 195, 195);
 }
 

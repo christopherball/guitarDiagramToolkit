@@ -243,6 +243,50 @@ function addPentagon(x, y, tag) {
     svg.appendChild(pentagon);
 }
 
+function addInputConnector(startY, endY) {
+    const length = 10;
+    const connector1 = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "line"
+    );
+    connector1.setAttribute("x1", 0);
+    connector1.setAttribute("x2", length);
+    connector1.setAttribute("y1", startY);
+    connector1.setAttribute("y2", startY);
+    connector1.setAttribute("stroke", "black");
+    connector1.setAttribute("stroke-width", "1");
+    connector1.setAttribute("stroke-linecap", "square");
+    connector1.setAttribute("class", "connector");
+    svg.appendChild(connector1);
+
+    const connector2 = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "line"
+    );
+    connector2.setAttribute("x1", length);
+    connector2.setAttribute("x2", length * 2);
+    connector2.setAttribute("y1", endY);
+    connector2.setAttribute("y2", endY);
+    connector2.setAttribute("stroke", "black");
+    connector2.setAttribute("stroke-width", "1");
+    connector2.setAttribute("stroke-linecap", "square");
+    connector2.setAttribute("class", "connector");
+    svg.appendChild(connector2);
+
+    const bridge = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "line"
+    );
+    bridge.setAttribute("x1", length);
+    bridge.setAttribute("x2", length);
+    bridge.setAttribute("y1", startY);
+    bridge.setAttribute("y2", endY);
+    bridge.setAttribute("stroke", "black");
+    bridge.setAttribute("stroke-width", "1");
+    bridge.setAttribute("class", "connector");
+    svg.appendChild(bridge);
+}
+
 function addFretNumber(number, yPos) {
     let fretPos = document.createElementNS(
         "http://www.w3.org/2000/svg",
@@ -250,9 +294,9 @@ function addFretNumber(number, yPos) {
     );
     fretPos.textContent = number;
     fretPos.setAttribute("text-anchor", "end");
-    fretPos.setAttribute("x", "15%");
+    fretPos.setAttribute("x", "16%");
     fretPos.setAttribute("y", yPos);
-    fretPos.setAttribute("font-size", "20px");
+    fretPos.setAttribute("font-size", "18px");
     fretPos.setAttribute("class", "fretNum");
     svg.appendChild(fretPos);
 }
@@ -297,6 +341,7 @@ function addFretMarker(number, yPos, symbol) {
 function resetInterfaceInputs() {
     document.getElementById("chord").value = "";
     document.getElementById("fret").value = "";
+    document.getElementById("inputConnector").value = "";
     document.querySelectorAll("input.stringLabels").forEach((e) => {
         e.value = "";
     });
@@ -419,6 +464,18 @@ function addStaticEventListeners() {
     });
 
     document
+        .getElementById("inputConnector")
+        .addEventListener("change", function (event) {
+            document.querySelectorAll("svg#diagram .connector").forEach((e) => {
+                e.remove();
+            });
+
+            // A = 96, B = 135, C = 174, D = 213, E = 255
+            const yPositions = event.target.value.split("-");
+            addInputConnector(yPositions[0], yPositions[1]);
+        });
+
+    document
         .getElementById("fret")
         .addEventListener("change", function (event) {
             document
@@ -455,9 +512,10 @@ function addStaticEventListeners() {
             };
             const fretNumStartVal = Number(event.target.value);
             if (fretNumStartVal > 0) {
+                let yPos = 29;
+                addFretNumber(fretNumStartVal, yPos + "%");
+
                 if (fretMarkerDictionary[fretNumStartVal] != "") {
-                    const yPos = 29;
-                    addFretNumber(fretNumStartVal, yPos + "%");
                     addFretMarker(
                         fretNumStartVal,
                         yPos - 2 + "%",
@@ -466,8 +524,7 @@ function addStaticEventListeners() {
                 }
 
                 if (fretMarkerDictionary[fretNumStartVal + 1] != "") {
-                    const yPos = 41;
-                    addFretNumber(fretNumStartVal + 1, yPos + "%");
+                    yPos = 41;
                     addFretMarker(
                         fretNumStartVal + 1,
                         yPos - 2 + "%",
@@ -476,8 +533,7 @@ function addStaticEventListeners() {
                 }
 
                 if (fretMarkerDictionary[fretNumStartVal + 2] != "") {
-                    const yPos = 52;
-                    addFretNumber(fretNumStartVal + 2, yPos + "%");
+                    yPos = 52;
                     addFretMarker(
                         fretNumStartVal + 2,
                         yPos - 2 + "%",
@@ -486,8 +542,7 @@ function addStaticEventListeners() {
                 }
 
                 if (fretMarkerDictionary[fretNumStartVal + 3] != "") {
-                    const yPos = 63;
-                    addFretNumber(fretNumStartVal + 3, yPos + "%");
+                    yPos = 63;
                     addFretMarker(
                         fretNumStartVal + 3,
                         yPos - 2 + "%",
@@ -496,8 +551,7 @@ function addStaticEventListeners() {
                 }
 
                 if (fretMarkerDictionary[fretNumStartVal + 4] != "") {
-                    const yPos = 75;
-                    addFretNumber(fretNumStartVal + 4, yPos + "%");
+                    yPos = 75;
                     addFretMarker(
                         fretNumStartVal + 4,
                         yPos - 2 + "%",
