@@ -62,7 +62,7 @@
             </div>
             <div class="containerSection">
                 <select id="inputConnector" required>
-                    <option value="" disabled selected hidden>Connector</option>
+                    <option value="" disabled selected hidden>Connect</option>
                     <option value="96-96">A-A</option>
                     <option value="96-135">A-B</option>
                     <option value="96-174">A-C</option>
@@ -90,9 +90,7 @@
                     <option value="255-255">E-E</option>
                 </select>
                 <select id="fret" required>
-                    <option value="" disabled selected hidden>
-                        Start Fret
-                    </option>
+                    <option value="" disabled selected hidden>Top Fret</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -111,6 +109,14 @@
                     <option value="16">16</option>
                     <option value="17">17</option>
                     <option value="18">18</option>
+                </select>
+                <select id="beats" required>
+                    <option value="" disabled selected hidden>Beats</option>
+                    <option value="|">1</option>
+                    <option value="||">2</option>
+                    <option value="|||">3</option>
+                    <option value="||||">4</option>
+                    <option value="|||||">5</option>
                 </select>
             </div>
             <svg

@@ -59,8 +59,9 @@ input#s1 {
 }
 
 select#fret,
-select#inputConnector {
-    width: 111px;
+select#inputConnector,
+select#beats {
+    width: 72px;
 }
 
 select#size {
@@ -68,7 +69,8 @@ select#size {
 }
 
 select#fret:invalid,
-select#inputConnector:invalid {
+select#inputConnector:invalid,
+select#beats:invalid {
     color: rgb(195, 195, 195);
 }
 

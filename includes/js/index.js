@@ -287,6 +287,20 @@ function addInputConnector(startY, endY) {
     svg.appendChild(bridge);
 }
 
+function addBeats(beatVal) {
+    let beatText = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "text"
+    );
+    beatText.textContent = beatVal;
+    beatText.setAttribute("text-anchor", "middle");
+    beatText.setAttribute("x", "125px");
+    beatText.setAttribute("y", "335px");
+    beatText.setAttribute("font-size", "30px");
+    beatText.setAttribute("class", "beats");
+    svg.appendChild(beatText);
+}
+
 function addFretNumber(number, yPos) {
     let fretPos = document.createElementNS(
         "http://www.w3.org/2000/svg",
@@ -342,6 +356,7 @@ function resetInterfaceInputs() {
     document.getElementById("chord").value = "";
     document.getElementById("fret").value = "";
     document.getElementById("inputConnector").value = "";
+    document.getElementById("beats").value = "";
     document.querySelectorAll("input.stringLabels").forEach((e) => {
         e.value = "";
     });
@@ -473,6 +488,16 @@ function addStaticEventListeners() {
             // A = 96, B = 135, C = 174, D = 213, E = 255
             const yPositions = event.target.value.split("-");
             addInputConnector(yPositions[0], yPositions[1]);
+        });
+
+    document
+        .getElementById("beats")
+        .addEventListener("change", function (event) {
+            document.querySelectorAll("svg#diagram .beats").forEach((e) => {
+                e.remove();
+            });
+
+            addBeats(event.target.value);
         });
 
     document
