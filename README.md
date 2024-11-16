@@ -1,5 +1,5 @@
 # Guitar Diagram Toolkit
-Handcrafted for personal needs, provides a unique guitar diagram authoring experience for arranging music using pure guitar diagrams, inspired by Ted Greene and Tim Lerch.
+Handcrafted for personal needs, Guitar Diagram Toolkit provides a unique authoring experience for arranging music using pure guitar diagrams, inspired by Ted Greene and Tim Lerch.
 
 <figure>
   <img

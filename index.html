@@ -61,7 +61,10 @@
                 <input type="text" id="chord" placeholder="Chord Name" />
             </div>
             <div class="containerSection">
-                <select id="inputConnector" required>
+                <select
+                    id="inputConnector"
+                    title="Sets a visual alignment connection between the preceding diagram and the current diagram (based on the 5 fret locations A-E)."
+                    required>
                     <option value="" disabled selected hidden>Connect</option>
                     <option value="96-96">A-A</option>
                     <option value="96-135">A-B</option>
@@ -89,7 +92,10 @@
                     <option value="255-213">E-D</option>
                     <option value="255-255">E-E</option>
                 </select>
-                <select id="fret" required>
+                <select
+                    id="fret"
+                    title="Sets the number of the top-most fret (includes fret markers for additional reference)."
+                    required>
                     <option value="" disabled selected hidden>Top Fret</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -110,7 +116,10 @@
                     <option value="17">17</option>
                     <option value="18">18</option>
                 </select>
-                <select id="beats" required>
+                <select
+                    id="beats"
+                    title="Sets the number of beats that the current diagram represents for a given bar/measure."
+                    required>
                     <option value="" disabled selected hidden>Beats</option>
                     <option value="|">1</option>
                     <option value="||">2</option>
@@ -138,35 +147,44 @@
                     type="text"
                     id="s6"
                     placeholder="s6"
+                    title="String label"
                     class="stringLabels" />
                 <input
                     type="text"
                     id="s5"
                     placeholder="s5"
+                    title="String label"
                     class="stringLabels" />
                 <input
                     type="text"
                     id="s4"
                     placeholder="s4"
+                    title="String label"
                     class="stringLabels" />
                 <input
                     type="text"
                     id="s3"
                     placeholder="s3"
+                    title="String label"
                     class="stringLabels" />
                 <input
                     type="text"
                     id="s2"
                     placeholder="s2"
+                    title="String label"
                     class="stringLabels" />
                 <input
                     type="text"
                     id="s1"
                     placeholder="s1"
+                    title="String label"
                     class="stringLabels" />
             </div>
             <div>
-                <select name="size" id="size" title="Size">
+                <select
+                    name="size"
+                    id="size"
+                    title="Sets the scale of the diagram (when inserted below).">
                     <option value="5.0">500%</option>
                     <option value="4.0">400%</option>
                     <option value="3.0">300%</option>
@@ -203,7 +221,12 @@
                 </button>
                 <div class="actionContainer">
                     <button id="insertBtn" title="Insert">+</button>
-                    <button id="updateBtn" title="Update" disabled>✎</button>
+                    <button
+                        id="updateBtn"
+                        title="Update (save changes to currently selected diagram)"
+                        disabled>
+                        ✎
+                    </button>
                     <button id="deleteBtn" title="Delete" disabled>🗑</button>
                     <button id="shiftLeftBtn" title="Shift Left" disabled>
                         ⇠
